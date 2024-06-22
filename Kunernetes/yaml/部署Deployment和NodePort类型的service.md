@@ -1,3 +1,5 @@
+创建一个nginx的deployment，再创建一个NodePort类型的service
+
 ```yaml
 apiVersion: apps/v1
 kind: Deployment

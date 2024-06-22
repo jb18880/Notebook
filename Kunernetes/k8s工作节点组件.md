@@ -1,0 +1,11 @@
+kube-proxy正在慢慢的退出历史的舞台
+
+kubelet：1.与master节点进行通信，master节点通过kubelet管理node节点；2. 对容器进行健康检查及监控，会对主节点汇报节点和节点上的pod的状态。
+
+kube-proxy：负责pod之间的通信和负载均衡，将指定的流量分发到后端指定的机器上。例如：service发起一个访问后端pod的请求，kube-proxy就会将该请求分配到对应的pod上。
+
+runtime：负责容器的管理。k8s环境中并不一定都是docker的，可能是别的容器运行时。
+
+CoreDNS：用于kubernetes内部service的解析，可将service的名称解析成service的IP地址，用于服务之间的通信。
+
+Calico：符合CNI标准的网络插件，它负责给每个pod分配一个不会重复的IP，并且把每个节点当做是一个路由器，这样一个节点的pod就可以通过IP地址访问到其他节点的pod。
