@@ -1,6 +1,6 @@
 ```shell
 #!/bin/bash
-nginx_version=1.17.6
+nginx_version=1.24.0
 
 #if [ -f nginx-${nginx_version}.tar.gz ]; then 
 #rm -rf nginx-${nginx_version}.tar.gz 
