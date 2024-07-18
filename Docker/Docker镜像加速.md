@@ -1,4 +1,4 @@
-# Docker镜像加速
+# 通过配置代理的方式设置Docker镜像加速
 
 通过本机代理的方式访问dockerhub
 
@@ -38,4 +38,25 @@
    ```shell
    $ sudo systemctl daemon-reload
    $ sudo systemctl restart docker
+   ```
+
+
+
+# 通过修改镜像源的方式设置Docker镜像加速
+   ```shell
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json <<-'EOF'
+   {
+    "registry-mirrors": [
+        "https://hub.uuuadc.top",
+        "https://docker.anyhub.us.kg",
+        "https://dockerhub.jobcher.com",
+        "https://dockerhub.icu",
+        "https://docker.ckyl.me",
+        "https://docker.awsl9527.cn"
+    ]
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
    ```
