@@ -83,7 +83,7 @@ conda activate MinerU
 #### 1. 安装Magic-PDF
 
 ```
-pip install magic-pdf[full-cpu]
+pip install magic-pdf[full-cpu] -i https://pypi.tuna.tsinghua.edu.cn/simple 
 ```
 
 ```
@@ -91,7 +91,7 @@ magic-pdf --version
 ```
 
 ```
-pip install detectron2 --extra-index-url https://myhloli.github.io/wheels/
+pip install detectron2 --extra-index-url https://myhloli.github.io/wheels/ -i https://pypi.tuna.tsinghua.edu.cn/simple 
 ```
 
 #### 2. 下载模型权重文件
