@@ -118,10 +118,9 @@ pip install detectron2 --extra-index-url https://myhloli.github.io/wheels/ -i ht
 git lfs install
 ```
 
-##### 从 Hugging Face 下载模型
+##### 下载模型
 
 ```
-#git lfs clone https://huggingface.co/wanderkid/PDF-Extract-Kit
 git clone https://www.modelscope.cn/wanderkid/PDF-Extract-Kit.git
 ```
 
