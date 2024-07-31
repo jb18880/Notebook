@@ -35,7 +35,7 @@ A						-->  B
 3. 解压
 
    ```shell
-   $ tar zxvf frp_0.58.1_linux_amd64.tar.gz
+   $ tar zxvf frp_0.58.1_linux_amd64.tar.gz -C /root/.frp
    ```
 
 4. 删除frpc相关文件(客户端文件)
