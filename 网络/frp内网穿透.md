@@ -74,7 +74,8 @@ A						-->  B
 
    ```shell
    sudo systemctl daemon-reload
-   sudo systemctl enable frps
+   sudo systemctl enable --now frps
+   sudo systemctl status frps
    ```
 
 7. 检查端口是否开启
