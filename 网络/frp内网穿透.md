@@ -25,7 +25,7 @@ A						-->  B
 1. 判断主机架构
 
    ```shell
-   $ arch
+   $ dpkg --print-architecture;arch
    ```
 
 2. 下载对应的安装包
