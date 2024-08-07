@@ -87,3 +87,8 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl restart docker
    ```
+
+
+# 通过cloudflare搭建个人Docker镜像代理
+https://www.youtube.com/watch?v=l2jwq9CagNQ&t=48s
+https://blog.cmliussss.com/p/CF-Workers-docker.io/
