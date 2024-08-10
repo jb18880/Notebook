@@ -11,30 +11,17 @@ zsh是一个功能强大的shell解释器
 ```
  cat /etc/shells
  ...
- /bin/zsh
+ /bin/zsh  
 ```
 
 ### **配置zsh**
 
-1. 配置很复杂，建议使用开源脚本进行配置
-
-```
- 这个是配置zsh的开源脚本的链接
- https://github.com/ohmyzsh/ohmyzsh
-```
-
-1. 安装git
-
-```
- apt -y install git
-```
+> ohmyzsh脚本链接： https://github.com/ohmyzsh/ohmyzsh
 
 1. 通过脚本自动配置
 
 ```
  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
- #访问github不顺畅的话，可以用下面的命令，把链接地址替换成了可以正常的访问的网址（这个地址由ohmyzsh项目的作者提供）
- sh -c "$(curl -fsSL https://install.ohmyz.sh)" "" --unattended
 ```
 
 1. 修改默认的shell解释器
@@ -44,35 +31,32 @@ zsh是一个功能强大的shell解释器
  chsh -s /bin/zsh root
 ```
 
-### **修改ZSH主题**
+### 安装插件
 
-修改提示符为随机主题
+#### 主题插件-p10k
 
-修改~/.zshrc中的ZSH_THEME的值为random
+> [!NOTE]
+>
+> 没有安装图形界面(GNOME)的话，使用效果不佳，可以不装
 
-```
- vim ~/.zshrc +11
- 
- ZSH_THEME="random"
-```
+1. 下载p10k插件
 
-通过zsh命令修改主题
+   ```
+   git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+   ```
 
-```
- zsh
- zsh
- zsh
- zsh
- zsh
- zsh
- jb@localhost:~
- [oh-my-zsh] Random theme 'sammy' loaded
- ~$ 
-```
+2. 启用p10k插件
 
-保存自己喜欢的主题
+   ```shell
+   vim ~/.zshrc +11
+   ZSH_THEME="powerlevel10k/powerlevel10k"
+   ```
 
-将自己喜欢的主题名替换random即可
+#### 自动补全插件
+
+#### 关键字高亮插件
+
+
 
 
 
@@ -158,5 +142,4 @@ zsh是一个功能强大的shell解释器
    >   #sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
    > 
    >   sh -c "$(curl -fsSL https://install.ohmyz.sh)" "" --unattended
-   > ```
-
+   > ``` 
