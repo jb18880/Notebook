@@ -54,7 +54,26 @@ zsh是一个功能强大的shell解释器
 
 #### 自动补全插件
 
+1. 下载插件
+
+   ```
+   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+   ```
+
 #### 关键字高亮插件
+
+1. 下载插件
+
+   ```
+   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+   ```
+
+2. 启用插件
+
+   ```shell
+   vim ~/.zshrc
+   plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+   ```
 
 
 
@@ -142,4 +161,4 @@ zsh是一个功能强大的shell解释器
    >   #sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
    > 
    >   sh -c "$(curl -fsSL https://install.ohmyz.sh)" "" --unattended
-   > ``` 
+   > ```
