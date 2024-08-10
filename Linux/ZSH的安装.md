@@ -3,7 +3,7 @@ zsh是一个功能强大的shell解释器
 ### **安装zsh**
 
 ```
- yum -y install zsh
+ apt -y install zsh
 ```
 
 检查是否安装成功
@@ -26,7 +26,7 @@ zsh是一个功能强大的shell解释器
 1. 安装git
 
 ```
- yum -y install git
+ apt -y install git
 ```
 
 1. 通过脚本自动配置
