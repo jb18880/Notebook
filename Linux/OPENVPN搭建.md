@@ -71,10 +71,5 @@
    </BODY></HTML>
    ```
 
-   
 
-
-
-参考文档：
-
-1. OpenVPN 服务器一键安装脚本 https://github.com/hwdsl2/openvpn-install/blob/master/README-zh.md
+> 参考文档： [OpenVPN服务器一键安装脚本](https://github.com/hwdsl2/openvpn-install/blob/master/README-zh.md)
