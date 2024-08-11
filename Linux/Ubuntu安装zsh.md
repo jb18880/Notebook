@@ -20,16 +20,16 @@ zsh是一个功能强大的shell解释器
 
 1. 通过脚本自动配置
 
-```
- sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-```
+   ```
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+   ```
 
-1. 修改默认的shell解释器
+2. 修改默认的shell解释器
 
-```
- #root字段为用户名，此处给root用户修改shell解释器；如果是其他用户，在此填写该用户的用户名即可。
- chsh -s /bin/zsh root
-```
+   ```
+    #root字段为用户名，此处给root用户修改shell解释器；如果是其他用户，在此填写该用户的用户名即可。
+    chsh -s /bin/zsh root
+   ```
 
 ### 安装插件
 
@@ -37,20 +37,53 @@ zsh是一个功能强大的shell解释器
 
 > [!NOTE]
 >
-> 没有安装图形界面(GNOME)的话，使用效果不佳，可以不装
+> 需要先安装字体：终端在哪里就在哪里安装字体，例如我是在windows上面通过ssh远程连接到ubuntu_server上，所以我就需要在windows主机上安装字体
 
-1. 下载p10k插件
+1. 终端主机-安装字体
+
+   > p10k项目地址
+
+   a) 在p10k项目地址里面下载p10k需要用到的字体
+
+   - [MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS NF Regular.ttf)
+
+   - [MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS NF Bold.ttf)
+
+   - [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS NF Italic.ttf)
+
+   - [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS NF Bold Italic.ttf)
+
+     ![下载文件示例](https://telegraph-image-67p.pages.dev/file/cc31ae6dad6026c7e6ea7.png)
+
+   b) 将下载的字体字体文件放置在`C:\Windows\Fonts`目录下，系统询问是否安装，选择是
+
+   ![fonts安装路径](https://telegraph-image-67p.pages.dev/file/d17b783e07a7d6dfa8bff.png)
+
+   c) terminal修改字体
+
+   `MesloLGS NF` 字体在系统上安装好之后，需要把该字体应用到windows terminal(win11自带，win10请在windows商店下载)中
+
+   windows terminal - 设置 - 配置文件 - 默认值 - 其他设置 - 外观 - 字体 - `MesloLGS NF` 
+
+   ![字体字体到windows terminal](https://telegraph-image-67p.pages.dev/file/1b52f3a1e8ecce7c783bf.png)
+
+2. server下载p10k插件
 
    ```
    git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
    ```
 
-2. 启用p10k插件
+3. 启用p10k插件
 
    ```shell
    vim ~/.zshrc +11
    ZSH_THEME="powerlevel10k/powerlevel10k"
    ```
+
+4. 自定义prompt显示效果
+
+   - 安装`p10k`后，通过`source ~/.zshrc`加载zsh配置文件，首次启用p10k会提示配置`prompt`
+   - 后续想要修改`prompt`可以通过`p10k configure`命令重新进入到prompt的配置界面
 
 #### 自动补全插件
 
