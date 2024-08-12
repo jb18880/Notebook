@@ -31,6 +31,11 @@ zsh是一个功能强大的shell解释器
     chsh -s /bin/zsh root
    ```
 
+3. 启用zsh
+   ```
+    zsh
+   ```
+
 ### 安装插件
 
 #### 主题插件-p10k
