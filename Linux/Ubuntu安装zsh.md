@@ -18,21 +18,28 @@ zsh是一个功能强大的shell解释器
 
 > ohmyzsh脚本链接： https://github.com/ohmyzsh/ohmyzsh
 
-1. 通过脚本自动配置
+1. 配置代理
 
+   ```shell
+   export http_proxy=http://10.0.0.1:10809
+   export https_proxy=http://10.0.0.1:10809
    ```
+
+2. 通过脚本自动配置
+
+   ```shell
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
    ```
 
-2. 修改默认的shell解释器
+3. 修改默认的shell解释器
 
-   ```
+   ```shell
     #root字段为用户名，此处给root用户修改shell解释器；如果是其他用户，在此填写该用户的用户名即可。
     chsh -s /bin/zsh root
    ```
 
-3. 启用zsh
-   ```
+4. 启用zsh
+   ```shell
     zsh
    ```
 
@@ -60,7 +67,7 @@ zsh是一个功能强大的shell解释器
 
 
 
-     ![下载文件示例](https://telegraph-image-67p.pages.dev/file/cc31ae6dad6026c7e6ea7.png)
+![下载文件示例](https://telegraph-image-67p.pages.dev/file/cc31ae6dad6026c7e6ea7.png)
 
    b) 将下载的字体字体文件放置在`C:\Windows\Fonts`目录下，系统询问是否安装，选择是
 
