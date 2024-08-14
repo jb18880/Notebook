@@ -6,7 +6,7 @@
 
    ```
    apt -y install chrony
-   timedatectl ststus 
+   timedatectl status 
    timedatectl set-ntp on
    timedatectl set-timezone Asia/Shanghai
    systemctl restart chronyd
