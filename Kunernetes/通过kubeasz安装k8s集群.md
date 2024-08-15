@@ -154,6 +154,7 @@
 6. 安装集群
 
    ```
+   source ~/.bashrc
    # 一键安装，等价于执行docker exec -it kubeasz ezctl setup k8s-01 all
    dk ezctl setup k8s-01 all
    
