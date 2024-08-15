@@ -202,4 +202,10 @@
    apt-get install -y kubelet kubeadm kubectl
    ```
 
-   
+> 参考项目：
+>
+> 1. [LinuxMirrors](https://github.com/SuperManito/LinuxMirrors)
+> 2. [docker-ansible](https://github.com/willhallonline/docker-ansible)
+> 3. [kubeasz](https://github.com/easzlab/kubeasz)
+> 4. [中科大镜像源](https://mirrors.ustc.edu.cn/kubernetes)
+
