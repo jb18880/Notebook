@@ -79,9 +79,7 @@ docker build \
 sudo mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json <<-'EOF'
    {
-    "registry-mirrors": [
-        "https://docker.awsl9527.cn"
-    ]
+    "registry-mirrors": [ "https://docker.soak.asia" ]
 }
 EOF
 sudo systemctl daemon-reload
