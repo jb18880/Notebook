@@ -21,8 +21,8 @@ zsh是一个功能强大的shell解释器
 1. 配置代理
 
    ```shell
-   export http_proxy=http://10.0.0.1:10809
-   export https_proxy=http://10.0.0.1:10809
+   export http_proxy=http://192.168.10.6:10809
+   export https_proxy=http://192.168.10.6:10809
    ```
 
 2. 通过脚本自动配置
