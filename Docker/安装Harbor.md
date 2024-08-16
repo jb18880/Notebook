@@ -138,7 +138,7 @@ sudo apt-get install docker-compose-plugin
    vim harbor.yml
    
    # 1. 修改harbor的域名
-   hostname: jb.harbor.com 192.168.10.10
+   hostname: 192.168.10.10
    
    # 2. https选项全部注释掉
    # https related config
