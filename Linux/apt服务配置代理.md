@@ -1,4 +1,13 @@
-# apt服务配置代理
+### apt服务配置代理
+
+#### 临时配置
+
+```shell
+$ https_proxy=http://192.168.10.6:10809/ apt update
+$ https_proxy=http://192.168.10.6:10809/ apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+#### 永久配置
 
 > 国内无法安装docker，需要配置代理，才能正常的访问download.docker.com，才能正常的安装docker
 >
@@ -64,3 +73,43 @@
    ```
 
    
+
+
+
+### wget工具配置代理
+
+#### 临时配置
+
+```shell
+wget -e use_proxy=yes -e http_proxy=http://192.168.10.6:10809 http://example.com
+```
+
+#### 永久配置
+
+```shell
+vim ~/.wgetrc 
+
+use_proxy = on
+http_proxy = http://192.168.10.6:10809/
+https_proxy = http://192.168.10.6:10809/
+```
+
+
+
+### curl工具配置代理
+
+#### 临时配置
+
+```shell
+curl -x 192.168.10.6:10809 google.com
+```
+
+#### 永久配置
+
+通过`export`配置环境变量，或者将代理相关的环境变量写进`~/.zshrc`中
+
+```shell
+echo "export http_proxy=http://192.168.10.6:10809" >> ~/.zshrc
+echo "export https_proxy=http://192.168.10.6:10809" >> ~/.zshrc
+```
+
