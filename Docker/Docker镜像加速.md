@@ -14,8 +14,8 @@ sudo mkdir -p /etc/systemd/system/docker.service.d
 - 为 dockerd 创建 HTTP/HTTPS 网络代理的配置文件，文件路径是 /etc/systemd/system/docker.service.d/http-proxy.conf 。并在该文件中添加相关环境变量。
 ```
 [Service]
-Environment="HTTP_PROXY=http://192.168.10.10:10809/"
-Environment="HTTPS_PROXY=http://192.168.10.10:10809/"
+Environment="HTTP_PROXY=http://192.168.10.6:10809/"
+Environment="HTTPS_PROXY=http://192.168.10.6:10809/"
 Environment="NO_PROXY=localhost,127.0.0.1,192.168.10.*"
 ```
 
