@@ -62,7 +62,7 @@
    	rm -rf /var/cache/dnf/* 
    	
    #CMD tail -f /etc/hosts
-   CMD [ "/bin/tial","-f","/etc/hosts"]
+   CMD [ "/bin/tail","-f","/etc/hosts"]
    ```
 
 3. 创建一个可以自定义启动参数的nginx镜像
