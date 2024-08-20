@@ -104,26 +104,29 @@
 
 8. 安装脚本
 
-   ```
+   ```shell
+   #!/bin/bash
+   
    wget https://download.redis.io/releases/redis-7.4.0.tar.gz
    tar xf redis-7.4.0.tar.gz -C /usr/local/
-   sudo apt-get install build-essential tcl pkg-config libsystemd-dev
+   sudo apt-get -y install build-essential tcl pkg-config libsystemd-dev
    cd /usr/local/redis-7.4.0
-   make
+   make -j 4
    make -j 4 PREFIX=/usr/local/redis USE_SYSTEMD=yes install
    echo 'export PATH=/usr/local/redis/bin:$PATH' >> /etc/profile.d/redis-path.sh
    source /etc/profile.d/redis-path.sh
    mkdir -p /usr/local/redis/{etc,log,data,run}
    cp /usr/local/redis-7.4.0/redis.conf /usr/local/redis/etc/
-   vim /usr/local/redis/etc/redis.conf
-   daemonize yes
-   sudo adduser --system --group --no-create-home redis
+   
+   sed -i 's/daemonize no/daemonize yes/' /usr/local/redis/etc/redis.conf
+   sed -i 's|^logfile ""|logfile "/usr/local/redis/log/redis.log"|' /usr/local/redis/etc/redis.conf
+   
    touch /usr/local/redis/log/redis.log
-   sudo chown -R redis:redis /usr/local/redis/log/redis.log
-   cp /usr/local/redis-7.4.0/utils/systemd-redis_server.service /lib/systemd/system/redis-server.service
-   vim /lib/systemd/system/redis-server.service
    
+   #sudo adduser --system --group --no-create-home redis
+   #sudo chown -R redis:redis /usr/local/redis/log/redis.log
    
+   sudo tee /lib/systemd/system/redis-server.service > /dev/null <<EOF
    [Unit]
    Description=Redis data structure server
    Documentation=https://redis.io/documentation
@@ -132,25 +135,29 @@
    
    [Service]
    ExecStart=/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf --supervised systemd --daemonize no
+   ExecStop=/usr/local/redis/bin/redis-cli shutdown
    LimitNOFILE=10032
    NoNewPrivileges=yes
    Type=notify
-   TimeoutStartSec=infinity
-   TimeoutStopSec=infinity
+   TimeoutStartSec=1
+   TimeoutStopSec=1
    UMask=0077
-   User=redis
-   Group=redis
+   #user=redis
+   #group=redis
    
    [Install]
    WantedBy=multi-user.target
    Alias=redis.service
+   EOF
    
    
    sudo systemctl daemon-reload
    sudo systemctl enable --now redis-server.service
-   sudo systemctl status redis
+   
+   echo "Redis的安装路径为:/usr/local/redis/bin/"
+   echo "Redis的配置文件路径为:/usr/local/redis/etc/redis.conf"
+   echo "Redis的日志文件路径为:/usr/local/redis/log/redis.log"
    ```
-
    
 
 ### 主从Redis
