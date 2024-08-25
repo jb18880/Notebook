@@ -118,8 +118,10 @@
    source /etc/profile.d/redis-path.sh
    mkdir -p /usr/local/redis/{etc,log,data,run}
    cp /usr/local/redis-7.4.0/redis.conf /usr/local/redis/etc/
-   
-   #sed -i 's/daemonize no/daemonize yes/' /usr/local/redis/etc/redis.conf
+
+   sed -i 's/protected-mode yes/protected-mode no/' /usr/local/redis/etc/redis.conf
+   sed -i 's/bind 127.0.0.1 -::1/#bind 127.0.0.1 -::1/' /usr/local/redis/etc/redis.conf
+   sed -i 's/daemonize no/daemonize yes/' /usr/local/redis/etc/redis.conf
    sed -i 's|^logfile ""|logfile "/usr/local/redis/log/redis.log"|' /usr/local/redis/etc/redis.conf
    
    touch /usr/local/redis/log/redis.log
