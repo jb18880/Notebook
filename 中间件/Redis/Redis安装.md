@@ -109,7 +109,7 @@
    
    wget https://download.redis.io/releases/redis-7.4.0.tar.gz
    tar xf redis-7.4.0.tar.gz -C /usr/local/
-   sudo update
+   sudo apt-get update
    sudo apt-get -y install build-essential tcl pkg-config libsystemd-dev
    cd /usr/local/redis-7.4.0
    make -j 4
