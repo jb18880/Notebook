@@ -1,2 +1,37 @@
+# 写一个脚本，遍历/data/目录下所有的txt文件
+# 将这些txt文件做一个备份
+# 备份的文件名增加一个年月日的后缀，比如aa.txt备份为aa.txt_20250207
 
-https://im.gurl.eu.org/file/AgACAgEAAxkDAAIhT2elRPSY9qIWaSGJCPA4_p2B20ScAAIbrjEbkKQpRZtxJCZS6HC2AQADAgADdwADNgQ.png
+
+
+###脚本内容
+
+#!/bin/bash
+#author:sekitonu
+#version:1
+#date:2025-02-07
+
+for i in /root/jb/shell_tests/day1/data
+do
+        cp -r $i $i_`date +%Y%m%d`
+done
+
+###实际效果
+#在脚本的同个目录下新增了一个“20250207”的目录，目录里面有待备份的文件，但是文件名没有加上后缀
+
+
+
+
+#!/bin/bash
+#author:sekitonu
+#version:2
+#date:2025-02-07
+
+for i in /root/jb/shell_tests/day1/data
+do
+        cp -r ${i} ${i}_`date +%Y%m%d`
+done
+
+###实际效果
+#在脚本的同个目录下新增了一个“data_20250207”的目录，目录里面有待备份的文件，但是文件名没有加上后缀
+
