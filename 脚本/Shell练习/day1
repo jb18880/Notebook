@@ -91,7 +91,7 @@ done
 suffix=`date +%Y%m%d`
 
 ##找到/data/目录下的txt文件，用for循环遍历
-for f in `find /data/ -type f -name "*.txt"`
+for f in `find /root/jb/shell_tests/day1/data -type f -name "*.txt"`
 do
         echo "备份文件$f"
         cp ${f} ${f}_${suffix}
