@@ -1,1 +1,30 @@
+# 写一个脚本，创建10个用户，并给他们设置随机密码，密码记录到一个文件里，文件名userinfo.txt
+# 用户名为：user_00  到  user_09
+# 密码要求：包含大小写字母以及数字，密码长度15位
 
+##############################################################################################
+#!/bin/bash
+#author: Sekitonu
+#version: 1
+#date: 2025-02-11
+
+#1. 判断密码记录文件是否存在，存在就删除
+if [ -e /root/jb/shell_tests/day2/userinfo.txt ]
+then
+  rm -rf /root/jb/shell_tests/day2/userinfo.txt
+fi
+
+#2. 判断openssl命令是否存在，不存在就安装
+if ! which openssl
+then 
+  apt -y install openssl
+fi
+
+#3. 生成随机字符串，并写入密码本
+echo `openssl rand -base64 16 | tr -dc 'a-zA-Z0-9' | head -c 15`\n >>/root/jb/shell_tests/day2/userinfo.txt
+
+#4. 添加用户
+for i in `seq -w 0 09`
+do
+useradd user_${i} 
+#5. 将字符串设置为用户密码
