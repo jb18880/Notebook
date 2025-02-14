@@ -15,16 +15,19 @@ then
 fi
 
 #2. 判断openssl命令是否存在，不存在就安装
-if ! which openssl
-then 
+if ! which openssl > /dev/null
+then
+  echo "openssl命令不存在，开始安装..."
   apt -y install openssl
+  echo "openssl安装完成"
 fi
 
-#3. 生成随机字符串，并写入密码本
-echo `openssl rand -base64 16 | tr -dc 'a-zA-Z0-9' | head -c 15`\n >>/root/jb/shell_tests/day2/userinfo.txt
-
-#4. 添加用户
+#3. 添加用户，并修改密码
 for i in `seq -w 0 09`
 do
-useradd user_${i} 
-#5. 将字符串设置为用户密码
+  username=user_${i}
+  password=$(openssl rand -base64 16 | tr -dc 'a-zA-Z0-9' | head -c 15)
+  useradd -m -s /bin/bash ${username}
+  echo "$username:$password" | chpasswd
+  echo "$username:$password" >> /root/jb/shell_tests/day2/userinfo.txt
+done
