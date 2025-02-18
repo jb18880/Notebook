@@ -31,3 +31,11 @@ do
   echo "$username:$password" | chpasswd
   echo "$username:$password" >> /root/jb/shell_tests/day2/userinfo.txt
 done
+
+
+
+####关键知识点总结：
+#ubuntu系统可以使用openssl创建密码，openssl工具再其他linux系统可以使用吗？
+#seq命令的用法，-w保持用户名的列宽一致
+#useradd的用法
+#chapass修改密码的用法
