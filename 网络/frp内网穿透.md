@@ -129,7 +129,7 @@ A						-->  B
 7. 配置自启动脚本(可选)
 
    ```shell
-   $ sudo vim /etc/systemd/system/frps.service
+   $ sudo vim /etc/systemd/system/frpc.service
    
    [Unit]
    # 服务名称，可自定义
@@ -148,7 +148,7 @@ A						-->  B
 
    ```shell
    sudo systemctl daemon-reload
-   sudo systemctl enable frps
+   sudo systemctl enable frpc --now
    ```
 
 ### 通过云服务器连接局域网服务器
