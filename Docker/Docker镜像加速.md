@@ -96,7 +96,12 @@ sudo tee /etc/docker/daemon.json > /dev/null << 'EOF'
     "https://docker.m.daocloud.io",
     "https://docker.1panel.dev",
     "https://registry.dockermirror.com"
-  ]
+  ],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m",
+    "max-file": "3"
+  }
 }
 EOF
 
