@@ -83,6 +83,23 @@ sudo tee /etc/docker/daemon.json <<-'EOF'
     "registry-mirrors": [ "https://docker.soak.asia" ]
 }
 EOF
+
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json > /dev/null << 'EOF'
+{
+  "proxies": {
+    "http-proxy": "http://192.168.65.1:7897",
+    "https-proxy": "http://192.168.65.1:7897",
+    "no-proxy": "localhost,127.0.0.1,::1,10.0.0.0/8,192.168.0.0/16,172.16.0.0/12"
+  },
+  "registry-mirrors": [
+    "https://docker.m.daocloud.io",
+    "https://docker.1panel.dev",
+    "https://registry.dockermirror.com"
+  ]
+}
+EOF
+
 sudo systemctl daemon-reload
 sudo systemctl restart docker
    ```
